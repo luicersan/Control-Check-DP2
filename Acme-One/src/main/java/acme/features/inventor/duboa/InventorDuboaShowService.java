@@ -1,54 +1,54 @@
-package acme.features.inventor.chimpum;
+package acme.features.inventor.duboa;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Chimpum;
+import acme.entities.Duboa;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorChimpumShowService implements AbstractShowService<Inventor, Chimpum> {
+public class InventorDuboaShowService implements AbstractShowService<Inventor, Duboa> {
 
 	@Autowired
-	protected InventorChimpumRepository repository;
+	protected InventorDuboaRepository repository;
 
 	@Override
-	public boolean authorise(final Request<Chimpum> request) {
+	public boolean authorise(final Request<Duboa> request) {
 		assert request != null;
 
 		boolean result;
 		int id;
-		Chimpum chimpum;
+		Duboa chimpum;
 		
 		id = request.getModel().getInteger("id");
-		chimpum = this.repository.findOneChimpumById(id);
+		chimpum = this.repository.findOneDuboaById(id);
 		result = chimpum.getItem().getInventor().getId() == request.getPrincipal().getActiveRoleId();
 
 		return result;
 	}
 
 	@Override
-	public Chimpum findOne(final Request<Chimpum> request) {
+	public Duboa findOne(final Request<Duboa> request) {
 		assert request != null;
 
 		int id;
-		Chimpum result;
+		Duboa result;
 		
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneChimpumById(id);
+		result = this.repository.findOneDuboaById(id);
 
 		return result;
 	}
 	
 	@Override
-	public void unbind(final Request<Chimpum> request, final Chimpum entity, final Model model) {
+	public void unbind(final Request<Duboa> request, final Duboa entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "code", "creationMoment", "title", "description", "startPeriod", "finishPeriod", "budget", "link");
+		request.unbind(entity, model, "code", "name", "summary", "startPeriod", "finishPeriod", "allotment", "additionalInfo");
 	}
 }

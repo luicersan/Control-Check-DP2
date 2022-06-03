@@ -1027,16 +1027,16 @@ send ^
       <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Chimpum
+Duboa
 --
-+ code: String {Pattern="^[0-9]{6}$"}
++ code: String {Pattern="^\\d{2}\\-\\d{2}\\-\\d{4}/\\d{2,4}$"}
 + creationMoment: Date {Past}
-+ title: String {NotBlank,Length(1,101)}
-+ description: String {NotBlank,Length(1,256)}
++ name: String {NotBlank,Length(1,101)}
++ summary: String {NotBlank,Length(1,256)}
 + startPeriod: Date
 + finishPeriod: Date
-+ budget: Money {Positive}
-+ link: String {Url} [0..1]
++ allotment: Money {Positive}
++ additionalInfo: String {Url} [0..1]
 
 
 bg=green</panel_attributes>

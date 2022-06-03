@@ -1,5 +1,5 @@
 /*
- * InventorChimpumListService.java
+ * InventorDuboaListService.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,27 +10,27 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.inventor.chimpum;
+package acme.features.inventor.duboa;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Chimpum;
+import acme.entities.Duboa;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorChimpumListService implements AbstractListService<Inventor, Chimpum> {
+public class InventorDuboaListService implements AbstractListService<Inventor, Duboa> {
 
 	@Autowired
-	protected InventorChimpumRepository repository;
+	protected InventorDuboaRepository repository;
 
 	@Override
-	public boolean authorise(final Request<Chimpum> request) {
+	public boolean authorise(final Request<Duboa> request) {
 		assert request != null;
 		
 		boolean result;
@@ -41,21 +41,21 @@ public class InventorChimpumListService implements AbstractListService<Inventor,
 	}
 
 	@Override
-	public Collection<Chimpum> findMany(final Request<Chimpum> request) {
+	public Collection<Duboa> findMany(final Request<Duboa> request) {
 		assert request != null;
 		
-		Collection<Chimpum> result;
-		result = this.repository.findAllChimpumsByInventorId(request.getPrincipal().getActiveRoleId());
+		Collection<Duboa> result;
+		result = this.repository.findAllDuboasByInventorId(request.getPrincipal().getActiveRoleId());
 		
 		return result;
 	}
 	
 	@Override
-	public void unbind(final Request<Chimpum> request, final Chimpum entity, final Model model) {
+	public void unbind(final Request<Duboa> request, final Duboa entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "startPeriod", "finishPeriod");
+		request.unbind(entity, model, "name", "startPeriod", "finishPeriod");
 	}
 }

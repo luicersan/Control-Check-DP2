@@ -1,13 +1,9 @@
-package acme.features.inventor.chimpum;
-
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+package acme.features.inventor.duboa;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Chimpum;
+import acme.entities.Duboa;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -15,62 +11,62 @@ import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorChimpumUpdateService implements AbstractUpdateService<Inventor, Chimpum> {
+public class InventorDuboaUpdateService implements AbstractUpdateService<Inventor, Duboa> {
 	
 	@Autowired
-	protected InventorChimpumRepository repository;
+	protected InventorDuboaRepository repository;
 	
 	@Override
-	public boolean authorise(final Request<Chimpum> request) {
+	public boolean authorise(final Request<Duboa> request) {
 		assert request != null;
 		
 		boolean result;
-		Chimpum chimpum;
+		Duboa chimpum;
 		int id;
 		
 		id = request.getModel().getInteger("id");
-		chimpum = this.repository.findOneChimpumById(id);
+		chimpum = this.repository.findOneDuboaById(id);
 		result = chimpum.getItem().getInventor().getId() == request.getPrincipal().getActiveRoleId();
 		return result;
 	}
 	
 	@Override
-	public void bind(final Request<Chimpum> request, final Chimpum entity, final Errors errors) {
+	public void bind(final Request<Duboa> request, final Duboa entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "code", "creationMoment", "title", "description", "budget", "link");
+		request.bind(entity, errors, "code", "name", "summary", "allotment", "additionalInfo");
 	}
 	
 	@Override
-	public void unbind(final Request<Chimpum> request, final Chimpum entity, final Model model) {
+	public void unbind(final Request<Duboa> request, final Duboa entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "code", "creationMoment", "title", "description", "startPeriod", "finishPeriod", "budget", "link");
+		request.unbind(entity, model, "code", "name", "summary", "startPeriod", "finishPeriod", "allotment", "additionalInfo");
 	}
 	
 	@Override
-	public Chimpum findOne(final Request<Chimpum> request) {
+	public Duboa findOne(final Request<Duboa> request) {
 		assert request != null;
 
-		Chimpum result;
+		Duboa result;
 		int id;
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneChimpumById(id);
+		result = this.repository.findOneDuboaById(id);
 
 		return result;
 	}
 	
 	@Override
-	public void validate(final Request<Chimpum> request, final Chimpum entity, final Errors errors) {
+	public void validate(final Request<Duboa> request, final Duboa entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 		if(!errors.hasErrors("budget")) {
-			final String upperCaseCurrency = entity.getBudget().getCurrency().toUpperCase();
+			final String upperCaseCurrency = entity.getAllotment().getCurrency().toUpperCase();
 			boolean accepted = false;
 			
 			// Manage likely currencies
@@ -80,13 +76,13 @@ public class InventorChimpumUpdateService implements AbstractUpdateService<Inven
 					break;
 				}
 			}
-			errors.state(request, entity.getBudget().getAmount() > 0, "budget", "inventor.chimpum.form.error.negative-budget");
+			errors.state(request, entity.getAllotment().getAmount() > 0, "budget", "inventor.chimpum.form.error.negative-budget");
 			errors.state(request, accepted, "budget", "inventor.chimpum.form.error.non-accepted-currency");
 		}
 	}
 	
 	@Override
-	public void update(final Request<Chimpum> request, final Chimpum entity) {
+	public void update(final Request<Duboa> request, final Duboa entity) {
 		assert request != null;
 		assert entity != null;
 

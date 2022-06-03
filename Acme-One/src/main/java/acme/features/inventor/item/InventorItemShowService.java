@@ -5,9 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Chimpum;
+import acme.entities.Duboa;
 import acme.entities.Item;
-import acme.entities.patronage.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
@@ -54,11 +53,11 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		assert model != null;
 
 		request.unbind(entity, model, "type", "name", "code", "technology", "description", "retailPrice", "link", "publish");
-		// Detect if is any chimpuns
-		List<Chimpum> chimpums = (List<Chimpum>) this.repository.itemHasAnyChimpums(entity.getId());
-		if(!chimpums.isEmpty()) {
-			model.setAttribute("hasChimpum", true);
-			model.setAttribute("chimpumId", chimpums.get(0).getId());
+		// Detect if is any duboas
+		final List<Duboa> duboas = (List<Duboa>) this.repository.itemHasAnyDuboas(entity.getId());
+		if(!duboas.isEmpty()) {
+			model.setAttribute("hasDuboa", true);
+			model.setAttribute("duboaId", duboas.get(0).getId());
 		}
 	}
 }

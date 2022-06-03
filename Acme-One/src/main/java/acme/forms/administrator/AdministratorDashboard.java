@@ -64,14 +64,14 @@ public class AdministratorDashboard implements Serializable {
 	
 	// CONTROL CHECK
 	
-	Double 						ratioOfArtifactsWithChimpums;
+	Double 						ratioOfComponentsWithDuboas;
 	
-	List<Object> 						averageBudgetOfChimpums;
+	List<Object> 						averageBudgetOfDuboas;
 	
-	List<Object> 						deviationBudgetOfChimpums;
+	List<Object> 						deviationBudgetOfDuboas;
 	
-	List<Object> 						minimumBudgetOfChimpums;
+	List<Object> 						minimumBudgetOfDuboas;
 	
-	List<Object> 						maximumBudgetOfChimpums;
+	List<Object> 						maximumBudgetOfDuboas;
 
 }

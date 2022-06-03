@@ -90,8 +90,8 @@
 					action="/inventor/patronage/list" />
 				<acme:menu-suboption code="master.menu.inventor.patronage-reports"
 					action="/inventor/patronage-report/list" />
-				<acme:menu-suboption code="master.menu.inventor.chimpums"
-					action="/inventor/chimpum/list" />
+				<acme:menu-suboption code="master.menu.inventor.duboas"
+					action="/inventor/duboa/list" />
 			</acme:menu-option>
 		</sec:authorize>
 

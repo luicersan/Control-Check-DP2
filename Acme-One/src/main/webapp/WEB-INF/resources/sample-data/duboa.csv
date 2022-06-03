@@ -1,0 +1,6 @@
+key,code,creationMoment,name,summary,startPeriod,finishPeriod,allotment,additionalInfo,key:item
+duboa-01,01-01-2022/111,2022/01/01 18:00,Duboa1,Desc Duboa1,2022/07/06 10:00,2022/07/13 10:00,EUR 6.0,,item-01
+duboa-02,01-01-2022/222,2022/01/01 19:00,Duboa2,Desc Duboa2,2022/07/07 11:00,2022/07/14 11:00,GBP 11.0,,item-02
+duboa-03,01-01-2022/333,2022/01/01 20:00,Duboa3,Desc Duboa3,2022/07/08 12:00,2022/07/15 12:00,EUR 21.0,,item-03
+duboa-04,01-01-2022/444,2022/01/01 21:00,Duboa4,Desc Duboa4,2022/07/09 13:00,2022/07/16 13:00,GBP 33.7,,item-04
+duboa-05,01-01-2022/555,2022/01/01 22:00,Duboa5,Desc Duboa5,2022/07/10 14:00,2022/07/17 14:00,USD 15.33,,item-05

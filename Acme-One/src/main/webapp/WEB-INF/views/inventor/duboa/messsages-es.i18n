@@ -1,0 +1,31 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+inventor.duboa.list.label.name = Nombre
+inventor.duboa.list.label.startPeriod = Fecha inicio
+inventor.duboa.list.label.finishPeriod = Fecha fin 
+
+inventor.duboa.form.label.code = Código 
+inventor.duboa.form.label.creationMoment = Fecha creación
+inventor.duboa.form.label.name = Nombre 
+inventor.duboa.form.label.summary = Resumen
+inventor.duboa.form.label.startPeriod = Fecha inicio
+inventor.duboa.form.label.finishPeriod = Fecha fin  
+inventor.duboa.form.label.allotment = Adjudicación
+inventor.duboa.form.label.additionalInfo = Información adicional
+
+inventor.duboa.form.button.create = Crear
+inventor.duboa.form.button.update = Actualizar
+inventor.duboa.form.button.delete = Borrar
+
+inventor.duboa.form.error.too-close-start-period = La fecha de inicio debe de ser, mínimo, para dentro de un mes
+inventor.duboa.form.error.one-week = Solo se permiten periodos de una semana de duración en adelante
+inventor.duboa.form.error.non-accepted-currency = Divisa no aceptada
+inventor.duboa.form.error.negative-allotment= La adjudicación no puede ser negativa
