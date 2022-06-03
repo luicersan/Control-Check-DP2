@@ -1,0 +1,31 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+inventor.chimpum.list.label.title = Título
+inventor.chimpum.list.label.startPeriod = Fecha inicio
+inventor.chimpum.list.label.finishPeriod = Fecha fin 
+
+inventor.chimpum.form.label.code = Código 
+inventor.chimpum.form.label.creationMoment = Fecha creación
+inventor.chimpum.form.label.title = Título 
+inventor.chimpum.form.label.description = Descripción 
+inventor.chimpum.form.label.startPeriod = Fecha inicio
+inventor.chimpum.form.label.finishPeriod = Fecha fin  
+inventor.chimpum.form.label.budget = Presupuesto
+inventor.chimpum.form.label.link = Link 
+
+inventor.chimpum.form.button.create = Crear
+inventor.chimpum.form.button.update = Actualizar
+inventor.chimpum.form.button.delete = Borrar
+
+inventor.chimpum.form.error.too-close-start-period = La fecha de inicio debe de ser, mínimo, para dentro de un mes
+inventor.chimpum.form.error.one-week = Solo se permiten periodos de una semana de duración en adelante
+inventor.chimpum.form.error.non-accepted-currency = Divisa no aceptada
+inventor.chimpum.form.error.negative-budget= La cantidad de divisa no puede ser negativa
